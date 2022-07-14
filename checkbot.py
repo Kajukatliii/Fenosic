@@ -131,9 +131,9 @@ class TelegramBot():
 
 					if result != False:
 
-						message.edit_text("[{}] Result : OK".format(splitted_command[0].strip("/")))
+						message.edit_text("[{}] Result : APPROVED".format(splitted_command[0].strip("/")))
 
-					else: message.edit_text("[{}] Result : FAIL".format(splitted_command[0].strip("/")))
+					else: message.edit_text("[{}] Result : DECLINED".format(splitted_command[0].strip("/")))
 
 				else: message.edit_text("Failed to get a random identity")
 
