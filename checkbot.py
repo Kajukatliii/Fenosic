@@ -39,6 +39,10 @@ buttons = [
         ),
     ],
 
+HELP_STRINGS = """
+🔱Bot Status - Online ✓\n Click Below buttons to know more
+"""
+
 BOT_TOKEN = 				"5459458134:AAH-Sh_nC3QJF_4d2Q-1CBIaJJyyHLSVYe0"
 
 CC_REGEX = 					"^[\d]{16}\|[\d]{2}\|[\d]{4}\|[\d]{3}$"
@@ -57,6 +61,15 @@ RAZORPAY_COMMAND = 			"rz"
 SHASHIO_COMMAND = 			"si"
 SOLE_COMMAND = 				"sl"
 TANGAROA_COMMAND = 			"tr"
+
+def send_help(chat_id, text, keyboard=None):
+    if not keyboard:
+        keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
+    dispatcher.bot.send_message(
+        chat_id=chat_id, text=text, parse_mode=ParseMode.MARKDOWN, reply_markup=keyboard
+    )
+
+#will do tomorrow
 
 class TelegramBot():
 
