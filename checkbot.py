@@ -29,6 +29,16 @@ import json
 import sys
 import re
 
+PM_START_TEXT = """
+Hello there, I'm Fenosic a cc checker bot \n use /help or click button given below to know my cmds.
+"""
+buttons = [
+    [
+        InlineKeyboardButton(
+            text="▼Help", callback_data="help_back"
+        ),
+    ],
+
 BOT_TOKEN = 				"5459458134:AAH-Sh_nC3QJF_4d2Q-1CBIaJJyyHLSVYe0"
 
 CC_REGEX = 					"^[\d]{16}\|[\d]{2}\|[\d]{4}\|[\d]{3}$"
